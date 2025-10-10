@@ -5,7 +5,7 @@ import java.time.LocalTime;
 
 public class Transactions {
     private LocalDate date;
-    private LocalTime time;
+    private LocalTime time;                                                                                 ///////'calTime time;
     private String description;
     private String vendor;
     private Float amount;
@@ -17,6 +17,6 @@ public class Transactions {
         this.vendor = vendor;
         this.amount = amount;
     }
-    
+
 
 }
