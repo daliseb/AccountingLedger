@@ -1,12 +1,13 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Transactions> transactions;
 
-        ArrayList<Transactions> transactions = getTransactions();
+
+        //ArrayList<Transactions> transactions = getTransactions();
 
 
 
