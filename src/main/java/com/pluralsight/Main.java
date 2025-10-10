@@ -1,10 +1,16 @@
 package com.pluralsight;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
-        }
+        ArrayList<Transactions> transactions = getTransactions();
+
+
+
+
+
     }
 }
