@@ -29,7 +29,25 @@ public class Main {
                 break;
 
             case "P":
-                System.out.println("");
+                System.out.println("You Have Selected: Make A Payment");
+                makePayment();
+                break;
+
+            case "L":
+                System.out.println("You Have Selected: View Ledger");
+                viewLedger();
+
+            case "X":
+                System.out.println("Exiting Program.....RETURNING TO MENU");
+                return;
+
+            default:
+                System.out.println("Invalid Entry! Please try again.");
+                break;
+
+
+
+
 
 
 
