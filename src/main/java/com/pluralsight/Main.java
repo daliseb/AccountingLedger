@@ -29,7 +29,7 @@ public class Main {
 
             case "P":
                 System.out.println("You Have Selected: Make A Payment");
-                //makePayment();
+                makePayment();
                 break;
 
             case "L":
@@ -56,6 +56,15 @@ public class Main {
         //needed to add prompt for double in console helper^
 
         System.out.println("Deposit added: " + description + " | Amount: $" + amount);
+    }
+
+    public static void makePayment() {
+        System.out.println("---- Make Payment ----");
+        String description = ConsoleHelper.promptForString("Enter description: ");
+        double amount = ConsoleHelper.promptForDouble("Enter payment amount: ");
+        //prompt for payment^
+
+        System.out.println("Payment added: " + description + " | Amount: $" + amount);
     }
 
     public static void showLedgerScreen() {
