@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;    //needed to import array list
 
 
-
 public class Main {
     public static void main(String[] args) {
+       Ledger ledger = new Ledger();
         //Home Screen
         System.out.println("----- Welcome to Dalis' Smoothie Shop Ledger! -----");
         System.out.println("Please select one of the following options:");
@@ -21,21 +21,21 @@ public class Main {
         choice = choice.toUpperCase();  //ensures answer will be in uppercase
 
         //add switch
-
         switch (choice){
             case "D":
                 System.out.println("You Have Selected: Add Deposit");
-                addDeposit();
+                //addDeposit();
                 break;
 
             case "P":
                 System.out.println("You Have Selected: Make A Payment");
-                makePayment();
+                //makePayment();
                 break;
 
             case "L":
                 System.out.println("You Have Selected: View Ledger");
-                viewLedger();
+                showLedgerScreen();
+                break;
 
             case "X":
                 System.out.println("Exiting Program.....RETURNING TO MENU");
@@ -44,23 +44,53 @@ public class Main {
             default:
                 System.out.println("Invalid Entry! Please try again.");
                 break;
-
-
-
-
-
-
-
-
         }
-
-
-
-
+//add method
 
 
 //we need to read the csv file, add file reader?
 
+    }
+
+    public static void showLedgerScreen() {
+        while(true) {
+            //Ledger Screen
+            System.out.println("Welcome To The Ledger Screen");
+            System.out.println("Please select one of the following options:");
+            System.out.println("A. Display All Entries");
+            System.out.println("D. Display All Deposits");
+            System.out.println("P. Display Payments");
+            System.out.println("R. Run Reports");
+            System.out.println("H. Return To Home");
+
+            String choice = ConsoleHelper.promptForString("Enter Your Choice");
+            choice = choice.toUpperCase();  //ensures answer will be in uppercase
+
+            switch (choice) {
+                case "A":
+                    System.out.println("You Have Selected: Display All Entries");
+                    //addDeposit();
+                    break;
+
+                case "D":
+                    System.out.println("You Have Selected: Make A Payment");
+                    //makePayment();
+                    break;
+
+                case "R":
+                    System.out.println("You Have Selected: View Ledger");
+                    //viewLedger();
+                    break;
+
+                case "H":
+                    System.out.println("Exiting Program.....RETURNING TO MENU");
+                    return;
+
+                default:
+                    System.out.println("Invalid Entry! Please try again.");
+                    break;
+            }
+        }
     }
 
     // Method to read transactions from the file
