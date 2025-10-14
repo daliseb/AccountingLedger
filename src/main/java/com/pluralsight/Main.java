@@ -9,8 +9,36 @@ import java.util.ArrayList;    //needed to import array list
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("----- Welcome to Dalis' Ledger App! -----");
+        //Home Screen
+        System.out.println("----- Welcome to Dalis' Smoothie Shop Ledger! -----");
         System.out.println("Please select one of the following options:");
+        System.out.println("D. Add Deposit");
+        System.out.println("P. Make A Payment");
+        System.out.println("L. View Ledger");
+        System.out.println("X. Exit");
+
+        String choice = ConsoleHelper.promptForString("Enter Your Choice:");
+        choice = choice.toUpperCase();  //ensures answer will be in uppercase
+
+        //add switch
+
+        switch (choice){
+            case "D":
+                System.out.println("You Have Selected: Add Deposit");
+                addDeposit();
+                break;
+
+            case "P":
+                System.out.println("");
+
+
+
+
+        }
+
+
+
+
 
 
 //we need to read the csv file, add file reader?
