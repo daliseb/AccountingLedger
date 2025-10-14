@@ -24,7 +24,7 @@ public class Main {
         switch (choice){
             case "D":
                 System.out.println("You Have Selected: Add Deposit");
-                //addDeposit();
+                addDeposit();
                 break;
 
             case "P":
@@ -46,10 +46,16 @@ public class Main {
                 break;
         }
 //add method
-
-
 //we need to read the csv file, add file reader?
+    }
 
+    public static void addDeposit() {
+        System.out.println("---- Add Deposit ----");
+        String description = ConsoleHelper.promptForString("Enter description: ");
+        double amount = ConsoleHelper.promptForDouble("Enter deposit amount: ");
+        //needed to add prompt for double in console helper^
+
+        System.out.println("Deposit added: " + description + " | Amount: $" + amount);
     }
 
     public static void showLedgerScreen() {
@@ -73,17 +79,22 @@ public class Main {
                     break;
 
                 case "D":
-                    System.out.println("You Have Selected: Make A Payment");
+                    System.out.println("You Have Selected: Display All Deposits");
                     //makePayment();
                     break;
 
+                case "P":
+                    System.out.println("You Have Selected: Display Payments");
+                    //viewLedger();
+                    break;
+
                 case "R":
-                    System.out.println("You Have Selected: View Ledger");
+                    System.out.println("You Have Selected: Run Reports");
                     //viewLedger();
                     break;
 
                 case "H":
-                    System.out.println("Exiting Program.....RETURNING TO MENU");
+                    System.out.println("Exiting Program.....RETURNING TO HOME SCREEN");
                     return;
 
                 default:

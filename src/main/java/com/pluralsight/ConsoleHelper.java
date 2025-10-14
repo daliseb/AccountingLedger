@@ -63,7 +63,20 @@ public class ConsoleHelper {
         long result = scanner.nextLong();
         scanner.nextLine();
         return result;
+
     }
+
+    public static double promptForDouble(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(prompt);
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Invalid input. Please enter a number.");
+            scanner.next(); // discard invalid input
+            System.out.print(prompt);
+        }
+        return scanner.nextDouble();
+    }
+
 }
 
 
