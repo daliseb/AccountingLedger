@@ -4,14 +4,21 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Transactions> transactions;
+        System.out.println("Please select one of the following options:");
+
+        for (int i = 0; i < transactions.size(); i ++) {
+            Transactions t = transactions.get(i);
+            System.out.println(t.getTransactions());
+
+            System.out.println(transactions.get(i).get);
+        }
 
 
 
 
 
+    ArrayList<Transactions> transactions = getTransactions();
 
-        //ArrayList<Transactions> transactions = getTransactions();
 
 
 
