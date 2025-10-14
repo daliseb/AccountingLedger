@@ -10,7 +10,7 @@ public class Main {
             Transactions t = transactions.get(i);
             System.out.println(t.getTransactions());
 
-            System.out.println(transactions.get(i).get);
+            System.out.println(transactions.get(i).getTransactions);
         }
 
 
