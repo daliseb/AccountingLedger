@@ -18,12 +18,11 @@ public class Main {
        Ledger ledger = new Ledger();
         showMainMenu();
         //Home Screen
-//add method
 //we need to read the csv file, add file reader?
     }
     public static void showMainMenu(){
         Ledger ledger = new Ledger();
-        //Home Screen
+        //THIS IS THE HOME SCREEN
         System.out.println("----- Welcome to Dalis' Smoothie Shop Ledger! -----");
         System.out.println("Please select one of the following options:");
         System.out.println("D. Add Deposit");
@@ -34,7 +33,7 @@ public class Main {
         String choice = ConsoleHelper.promptForString("Enter Your Choice:");
         choice = choice.toUpperCase();  //ensures answer will be in uppercase
 
-        //add switch
+        //add switch, SWITCH/CASE FOR HOME SCREEN OPTIONS
         switch (choice){
             case "D":
                 System.out.println("You Have Selected: Add Deposit");
@@ -76,7 +75,6 @@ public class Main {
         showMainMenu();
     }
 
-
     public static void makePayment() {
         System.out.println("---- Make Payment ----");
         String description = ConsoleHelper.promptForString("Enter description: ");
@@ -94,7 +92,7 @@ public class Main {
 
     public static void showLedgerScreen() {
         while(true) {
-            //Ledger Screen
+            //THIS IS THE LEDGER SCREEN
             System.out.println("Welcome To The Ledger Screen");
             System.out.println("Please select one of the following options:");
             System.out.println("A. Display All Entries");
@@ -161,6 +159,8 @@ public class Main {
 
         return transactions;
     }
+
+
 
     //method for adding/formatting time
     public static String thisDateTime(){
