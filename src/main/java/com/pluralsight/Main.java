@@ -61,8 +61,9 @@ public class Main {
         }
 
     }
+    //HOME MENU OPTIONS
     public static void addDeposit() {
-        System.out.println("---- Add Deposit ----");
+        System.out.println("----₊ ⊹ Add Deposit ₊ ⊹----");
         String description = ConsoleHelper.promptForString("Enter description: ");
         double amount = ConsoleHelper.promptForDouble("Enter Deposit amount: ");
         String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
@@ -76,7 +77,7 @@ public class Main {
     }
 
     public static void makePayment() {
-        System.out.println("---- Make Payment ----");
+        System.out.println("----₊ ⊹ Make Payment ₊ ⊹----");
         String description = ConsoleHelper.promptForString("Enter description: ");
         double amount = ConsoleHelper.promptForDouble("Enter Payment amount: ");
         String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
@@ -107,17 +108,17 @@ public class Main {
             switch (choice) {
                 case "A":
                     System.out.println("You Have Selected: Display All Entries");
-                    //displayEntries();
+                    displayEntries();
                     break;
 
                 case "D":
                     System.out.println("You Have Selected: Display All Deposits");
-                    //displayDeposits();
+                    displayDeposits();
                     break;
 
                 case "P":
                     System.out.println("You Have Selected: Display Payments");
-                    //displayPayments();
+                    displayPayments();
                     break;
 
                 case "R":
@@ -136,10 +137,28 @@ public class Main {
             }
         }
     }
+    //LEDGER MENU OPTIONS
         public static void displayEntries(){  //go back and finish the method to pull my csv file
-            System.out.println("---- Displaying Entries ----");
+            System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
-            System.out.println("Report Was Displayed On" + dateTime);
+            System.out.println("Report Was Displayed On"+ " " + dateTime);
+
+        }
+
+        public static void displayDeposits(){
+            System.out.println("----₊ ⊹ Displaying Deposits Only ₊ ⊹----");
+            String dateTime = thisDateTime();
+            System.out.println("Report Was Displayed On"+ " " + dateTime);
+
+
+
+        }
+
+        public static void displayPayments(){
+            System.out.println("----₊ ⊹ Displaying Payments Only ₊ ⊹----");
+            String dateTime = thisDateTime();
+            System.out.println("Report Was Displayed On"+ " " + dateTime);
+
 
         }
 
@@ -186,7 +205,9 @@ public class Main {
     }
 
 
-    //file writer to add to csv pg.21 in 3a
+    
+
+    //file writer to add to csv found on pg.21 in 3a
     public static void convertToCSV(String csvText) {
         try {
             FileWriter writer = new FileWriter("transactions.csv", true);

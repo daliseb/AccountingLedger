@@ -1,4 +1,4 @@
-date|time|description|vendor|amount  //chatgpt was prompted for this data
+date|time|description|vendor|amount
 2023-02-14|09:12:45|Initial business deposit|Bank of America|5000.00
 2023-03-10|09:45:12|Purchase of blenders|KitchenPro|-325.75
 2023-06-18|11:22:08|Fruit order - tropical mix|Tropical Farms|-480.00
@@ -13,4 +13,4 @@ date|time|description|vendor|amount  //chatgpt was prompted for this data
 2025-10-14|20:52:41|smoothie|Walk-In|5.0
 2025-10-15|09:56:39|Smoothie|Dalis|6.0
 2025-10-15|10:04:04|New Shop Deposit|Spring Wells Realty|5000.0
-2025-10-15|11:09:04|Smoothie|John|5.0
+
