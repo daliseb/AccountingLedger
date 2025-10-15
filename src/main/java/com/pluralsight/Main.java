@@ -2,13 +2,27 @@ package com.pluralsight;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;    //needed to import array list
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+
+
+//needed to import array list
 
 
 public class Main {
     public static void main(String[] args) {
        Ledger ledger = new Ledger();
+        showMainMenu();
+        //Home Screen
+//add method
+//we need to read the csv file, add file reader?
+    }
+    public static void showMainMenu(){
+        Ledger ledger = new Ledger();
         //Home Screen
         System.out.println("----- Welcome to Dalis' Smoothie Shop Ledger! -----");
         System.out.println("Please select one of the following options:");
@@ -45,18 +59,20 @@ public class Main {
                 System.out.println("Invalid Entry! Please try again.");
                 break;
         }
-//add method
-//we need to read the csv file, add file reader?
-    }
 
+    }
     public static void addDeposit() {
         System.out.println("---- Add Deposit ----");
         String description = ConsoleHelper.promptForString("Enter description: ");
         double amount = ConsoleHelper.promptForDouble("Enter deposit amount: ");
+        String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
+        String dateTime = thisDateTime();
         //needed to add prompt for double in console helper^
 
         System.out.println("Deposit added: " + description + " | Amount: $" + amount);
+        String depositText = dateTime + description + vendor + amount;
     }
+
 
     public static void makePayment() {
         System.out.println("---- Make Payment ----");
@@ -66,6 +82,7 @@ public class Main {
 
         System.out.println("Payment added: " + description + " | Amount: $" + amount);
     }
+
 
     public static void showLedgerScreen() {
         while(true) {
@@ -84,26 +101,27 @@ public class Main {
             switch (choice) {
                 case "A":
                     System.out.println("You Have Selected: Display All Entries");
-                    //addDeposit();
+                    //displayEntries();
                     break;
 
                 case "D":
                     System.out.println("You Have Selected: Display All Deposits");
-                    //makePayment();
+                    //displayDeposits();
                     break;
 
                 case "P":
                     System.out.println("You Have Selected: Display Payments");
-                    //viewLedger();
+                    //displayPayments();
                     break;
 
                 case "R":
                     System.out.println("You Have Selected: Run Reports");
-                    //viewLedger();
+                    //runReports();
                     break;
 
                 case "H":
                     System.out.println("Exiting Program.....RETURNING TO HOME SCREEN");
+                    showMainMenu();
                     return;
 
                 default:
@@ -135,6 +153,36 @@ public class Main {
 
         return transactions;
     }
+
+    public static String thisDateTime(){
+        LocalDate thisDate = LocalDate.now();
+        LocalTime thisTime = LocalTime.now();
+
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("mm-ss-ns");
+
+        String date = thisDate.format(dateFormatter);
+        String time = thisTime.format(timeFormatter);
+        return date + "|" + time;
+    }
+
+    public static void convertToCSV(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("transactions.csv", true);
+
+            writer.write(args[0]);
+            writer.close();
+
+        }
+        catch (IOException e){
+            System.out.println("error");
+            e.printStackTrace();
+        }
+
+
+    }
+
+
 
 
 //        //System.out.println(transactions.get(i).getTransactions);     //load files from csv

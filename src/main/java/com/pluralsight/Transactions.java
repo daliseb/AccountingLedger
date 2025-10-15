@@ -6,7 +6,7 @@ import java.time.LocalTime;
 //what we need  to keep track  of:
 public class Transactions {
     private LocalDate date;
-    private LocalTime time;                                                                                 ///////'calTime time;
+    private LocalTime time;
     private String description;
     private String vendor;
     private Double amount;
