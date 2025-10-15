@@ -14,9 +14,10 @@ import java.util.ArrayList;
 
 
 public class Main {
+    public static ArrayList<Transactions> transactionsFromCSV = getTransactions();
     public static void main(String[] args) {
        //Ledger ledger = new Ledger();
-//       ArrayList<Transactions> transactionsFromCSV = getTransactions();
+
         showMainMenu();
         //Home Screen
     }
@@ -93,7 +94,7 @@ public class Main {
 
 
     public static void showLedgerScreen() {
-        ArrayList<Transactions> transactionsFromCSV = getTransactions();
+//        ArrayList<Transactions> transactionsFromCSV = getTransactions();
 
         while(true) {
             //THIS IS THE LEDGER SCREEN
