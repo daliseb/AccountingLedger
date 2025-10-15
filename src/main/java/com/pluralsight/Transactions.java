@@ -61,5 +61,10 @@ public class Transactions {
     public void setAmount(Double amount) {
         this.amount = amount;
     }
+
+    public String toString() {
+        return String.format("%s|%s|%s|%s|%.2f", date,time,description,vendor,amount);
+    }
+
 }
 

@@ -53,7 +53,6 @@ public class Main {
 
             case "X":
                 System.out.println("Exiting Program.....RETURNING TO MENU");
-                showMainMenu();
                 return;
 
             default:
@@ -102,7 +101,7 @@ public class Main {
             System.out.println("Please select one of the following options:");
             System.out.println("A. Display All Entries");
             System.out.println("D. Display All Deposits");
-            System.out.println("P. Display Payments");
+            System.out.println("P. Display All Payments");
             System.out.println("R. Run Reports");
             System.out.println("H. Return To Home");
 
@@ -161,7 +160,13 @@ public class Main {
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
 
+            for (Transactions t : transactionsFromCSV) {
+                if (t.getAmount() >= 0){
+                    System.out.println(t);
+                }
 
+
+            }
 
         }
 
@@ -170,6 +175,12 @@ public class Main {
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
 
+            for (Transactions t : transactionsFromCSV) {
+                if (t.getAmount() < 0) {
+                    System.out.println(t);
+
+                }
+            }
 
         }
 
