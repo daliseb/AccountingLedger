@@ -53,6 +53,7 @@ public class Main {
 
             case "X":
                 System.out.println("Exiting Program.....RETURNING TO MENU");
+                showMainMenu();
                 return;
 
             default:
@@ -64,7 +65,7 @@ public class Main {
     public static void addDeposit() {
         System.out.println("---- Add Deposit ----");
         String description = ConsoleHelper.promptForString("Enter description: ");
-        double amount = ConsoleHelper.promptForDouble("Enter deposit amount: ");
+        double amount = ConsoleHelper.promptForDouble("Enter Deposit amount: ");
         String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
         String dateTime = thisDateTime();
         //needed to add prompt for double in console helper^
@@ -79,10 +80,15 @@ public class Main {
     public static void makePayment() {
         System.out.println("---- Make Payment ----");
         String description = ConsoleHelper.promptForString("Enter description: ");
-        double amount = ConsoleHelper.promptForDouble("Enter payment amount: ");
-        //prompt for payment^
+        double amount = ConsoleHelper.promptForDouble("Enter Payment amount: ");
+        String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
+        String dateTime = thisDateTime();
 
         System.out.println("Payment added: " + description + " | Amount: $" + amount);
+        String depositText = dateTime + "|" + description + "|" + vendor + "|" + amount + "\n";
+        convertToCSV(depositText);
+        showMainMenu();
+
     }
 
 
@@ -170,7 +176,7 @@ public class Main {
     }
 
 
-    //file writer to add to csv
+    //file writer to add to csv pg.21 in 3a
     public static void convertToCSV(String csvText) {
         try {
             FileWriter writer = new FileWriter("transactions.csv", true);
