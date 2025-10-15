@@ -70,7 +70,9 @@ public class Main {
         //needed to add prompt for double in console helper^
 
         System.out.println("Deposit added: " + description + " | Amount: $" + amount);
-        String depositText = dateTime + description + vendor + amount;
+        String depositText = dateTime + "|" + description + "|" + vendor + "|" + amount + "\n";
+        convertToCSV(depositText);
+        showMainMenu();
     }
 
 
@@ -154,23 +156,26 @@ public class Main {
         return transactions;
     }
 
+    //method for adding/formatting time
     public static String thisDateTime(){
         LocalDate thisDate = LocalDate.now();
         LocalTime thisTime = LocalTime.now();
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("mm-ss-ns");
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
         String date = thisDate.format(dateFormatter);
         String time = thisTime.format(timeFormatter);
         return date + "|" + time;
     }
 
-    public static void convertToCSV(String[] args) {
+
+    //file writer to add to csv
+    public static void convertToCSV(String csvText) {
         try {
             FileWriter writer = new FileWriter("transactions.csv", true);
 
-            writer.write(args[0]);
+            writer.write(csvText);
             writer.close();
 
         }
