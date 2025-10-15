@@ -21,7 +21,7 @@ public class Main {
 //we need to read the csv file, add file reader?
     }
     public static void showMainMenu(){
-        Ledger ledger = new Ledger();
+
         //THIS IS THE HOME SCREEN
         System.out.println("----✿✿✿ Welcome to Dalis' Smoothie Shop Ledger! ✿✿✿----");
         System.out.println("Please select one of the following options:");
@@ -92,6 +92,8 @@ public class Main {
 
 
     public static void showLedgerScreen() {
+        ArrayList<Transactions> transactionsFromCSV = getTransactions();
+
         while(true) {
             //THIS IS THE LEDGER SCREEN
             System.out.println("----✰✰✰ Welcome To The Ledger Screen ✰✰✰----");
@@ -108,7 +110,7 @@ public class Main {
             switch (choice) {
                 case "A":
                     System.out.println("You Have Selected: Display All Entries");
-                    displayEntries();
+                    displayEntries(transactionsFromCSV);
                     break;
 
                 case "D":
@@ -123,7 +125,7 @@ public class Main {
 
                 case "R":
                     System.out.println("You Have Selected: Run Reports");
-                    //runReports();
+                    showReportsScreen();
                     break;
 
                 case "H":
@@ -138,10 +140,12 @@ public class Main {
         }
     }
     //LEDGER MENU OPTIONS
-        public static void displayEntries(){  //go back and finish the method to pull my csv file
+        public static void displayEntries(ArrayList<Transactions> transactionsFromCSV){  //go back and finish the method to pull my csv file
             System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
+            //for loop goes here, it will go through transactions from csv and print each line as a string
+
 
         }
 
@@ -162,11 +166,31 @@ public class Main {
 
         }
 
+    public static void showReportsScreen() {
+        while(true) {
+            //THIS IS THE REPORTS SCREEN
+            System.out.println("----✰✰✰ Welcome To The Reports Screen ✰✰✰----");
+            System.out.println("Please select one of the following options:");
+            System.out.println("A. Month To Date");
+            System.out.println("B. Previous Month");
+            System.out.println("C. Year To Date");
+            System.out.println("D. Previous Year");
+            System.out.println("E. Search By Vendor");
+            System.out.println("X. Go Back");  //to ledger screen
+
+            String choice = ConsoleHelper.promptForString("Enter Your Choice");
+            choice = choice.toUpperCase();  //ensures answer will be in uppercase
+
+
+        }
+    }
 
 
 
 
-    // Method to read transactions from the file
+
+
+            // Method to read transactions from the file
     public static ArrayList<Transactions> getTransactions() {
         ArrayList<Transactions> transactions = new ArrayList<>();
 
@@ -177,7 +201,13 @@ public class Main {
             String input;
             while ((input = bufferedReader.readLine()) != null) {
                 System.out.println(input);
-                // add parser?
+                //2023-02-14|09:12:45|Initial business deposit|Bank of America|5000.00
+                //public Transactions(LocalDate date, LocalTime time, String description, String vendor, Double amount)
+                String[] transactionString = input.split("\\|");
+                Transactions transaction = new Transactions(LocalDate.parse(transactionString[0]), LocalTime.parse(transactionString[1]), transactionString[2], transactionString[3], Double.parseDouble(transactionString[4]));
+
+                transactions.add(transaction);
+
             }
 
             bufferedReader.close();
@@ -205,7 +235,7 @@ public class Main {
     }
 
 
-    
+
 
     //file writer to add to csv found on pg.21 in 3a
     public static void convertToCSV(String csvText) {
