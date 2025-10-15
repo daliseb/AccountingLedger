@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-       Ledger ledger = new Ledger();
+       //Ledger ledger = new Ledger();
+//       ArrayList<Transactions> transactionsFromCSV = getTransactions();
         showMainMenu();
         //Home Screen
-//we need to read the csv file, add file reader?
     }
     public static void showMainMenu(){
 
@@ -146,7 +146,11 @@ public class Main {
             System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
-            //for loop goes here, it will go through transactions from csv and print each line as a string
+            //for loop goes here, this will go through transactions from csv and print each line as a string
+
+            for (Transactions t : transactionsFromCSV) {
+                System.out.println(t);
+            }
 
 
         }
@@ -202,7 +206,7 @@ public class Main {
 
             String input;
             while ((input = bufferedReader.readLine()) != null) {
-                System.out.println(input);
+                //System.out.println(input);
                 //2023-02-14|09:12:45|Initial business deposit|Bank of America|5000.00
                 //public Transactions(LocalDate date, LocalTime time, String description, String vendor, Double amount)
                 String[] transactionString = input.split("\\|");
