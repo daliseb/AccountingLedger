@@ -56,7 +56,8 @@ public class Main {
                 return;
 
             default:
-                System.out.println("Invalid Entry! Please try again.");
+                System.out.println("Invalid Entry! Please try again ˙◠˙");
+                showMainMenu();
                 break;
         }
 
@@ -134,7 +135,8 @@ public class Main {
                     return;
 
                 default:
-                    System.out.println("Invalid Entry! Please try again.");
+                    System.out.println("Invalid Entry! Please try again ˙◠˙");
+                    showMainMenu();
                     break;
             }
         }
@@ -190,7 +192,7 @@ public class Main {
 
 
 
-            // Method to read transactions from the file
+            // Method to read transactions from the file pg 13 in 3a
     public static ArrayList<Transactions> getTransactions() {
         ArrayList<Transactions> transactions = new ArrayList<>();
 
@@ -247,7 +249,7 @@ public class Main {
 
         }
         catch (IOException e){
-            System.out.println("error");
+            System.out.println("error ˙◠˙");
             e.printStackTrace();
         }
 
