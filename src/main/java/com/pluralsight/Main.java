@@ -23,7 +23,7 @@ public class Main {
     public static void showMainMenu(){
         Ledger ledger = new Ledger();
         //THIS IS THE HOME SCREEN
-        System.out.println("----- Welcome to Dalis' Smoothie Shop Ledger! -----");
+        System.out.println("----✿✿✿ Welcome to Dalis' Smoothie Shop Ledger! ✿✿✿----");
         System.out.println("Please select one of the following options:");
         System.out.println("D. Add Deposit");
         System.out.println("P. Make A Payment");
@@ -33,7 +33,7 @@ public class Main {
         String choice = ConsoleHelper.promptForString("Enter Your Choice:");
         choice = choice.toUpperCase();  //ensures answer will be in uppercase
 
-        //add switch, SWITCH/CASE FOR HOME SCREEN OPTIONS
+        //add switch, SWITCH/CASE FOR HOME SCREEN OPTIONS from w3 schools
         switch (choice){
             case "D":
                 System.out.println("You Have Selected: Add Deposit");
@@ -69,7 +69,7 @@ public class Main {
         String dateTime = thisDateTime();
         //needed to add prompt for double in console helper^
 
-        System.out.println("Deposit added: " + description + " | Amount: $" + amount);
+        System.out.println("Deposit added: " + description + " | Amount: $" + amount + "\n");
         String depositText = dateTime + "|" + description + "|" + vendor + "|" + amount + "\n";
         convertToCSV(depositText);
         showMainMenu();
@@ -93,7 +93,7 @@ public class Main {
     public static void showLedgerScreen() {
         while(true) {
             //THIS IS THE LEDGER SCREEN
-            System.out.println("Welcome To The Ledger Screen");
+            System.out.println("----✰✰✰ Welcome To The Ledger Screen ✰✰✰----");
             System.out.println("Please select one of the following options:");
             System.out.println("A. Display All Entries");
             System.out.println("D. Display All Deposits");
@@ -136,6 +136,16 @@ public class Main {
             }
         }
     }
+        public static void displayEntries(){  //go back and finish the method to pull my csv file
+            System.out.println("---- Displaying Entries ----");
+            String dateTime = thisDateTime();
+            System.out.println("Report Was Displayed On" + dateTime);
+
+        }
+
+
+
+
 
     // Method to read transactions from the file
     public static ArrayList<Transactions> getTransactions() {
