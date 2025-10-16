@@ -250,41 +250,19 @@ public class Main {
         //System.out.println(dateStart);
         //System.out.println(monthStart);
 
-       for (Transactions t : transactionsFromCSV){
+        for (Transactions t : transactionsFromCSV){
 
-               if(isWithinRange(date, minDate, maxDate)){
-                   selectedDates.add(date);
-               }
+            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(monthStart)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(monthStart) && t.getDate().isBefore(dateStart)){
+                System.out.println(t);
 
-
-           for(LocalDate date : selectedDates){
-               System.out.println(date);
-           }
-
-
-
-       }
-
-
-
-
-
-
-
-
-    }
-//
-//            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(monthStart)){
-//                System.out.println(t);
-//            }
-//            if(t.getDate().isAfter(monthStart) && t.getDate().isBefore(dateStart)){
-//                System.out.println(t);
-//
-//            }
+            }
 //fix switch case to match the reports menu, tailor if statements to match report screen requirements.
 //&& examples of operators, &&-means both statements have to be true.
-//
-//        }
+
+        }
 
     }
     public static void displayPreviousMonth(){
@@ -292,14 +270,16 @@ public class Main {
         LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);  //starting it from first day of last month
         LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this is where we isolate the last day of the month
 
+
         for (Transactions t : transactionsFromCSV) {
-//            if (t.getDate().isEqual(firstDayPrevMonth) && t.getDate().isAfter(firstDayPrevMonth)) {
-//                System.out.println(t);
-//            }
-//            if (t.getDate().isEqual(lastDayPrevMonth) || t.getDate().isBefore(lastDayPrevMonth)) {
-//                System.out.println(t);
-//
-//            }
+
+            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
+                System.out.println(t);
+
+            }
 
         }
 
@@ -307,6 +287,22 @@ public class Main {
 
     public static void displayYearToDate(){
         LocalDate dateStart = LocalDate.now();
+        LocalDate dateStart = LocalDate.now();
+        LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);  //starting it from first day of last month
+        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this is where we isolate the last day of the month
+
+
+        for (Transactions t : transactionsFromCSV) {
+
+            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
+                System.out.println(t);
+
+            }
+
+        }
     }
 
 
