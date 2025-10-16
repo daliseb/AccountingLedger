@@ -145,6 +145,7 @@ public class Main {
         public static void displayEntries(ArrayList<Transactions> transactionsFromCSV){  //go back and finish the method to pull my csv file
             System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
+            System.out.println("|Date     |Time    |Description            |Vendor          |Amount          |  ");
             System.out.println("Report Was Displayed On"+ " " + dateTime);
             //for loop goes here, this will go through transactions from csv and print each line as a string
 
@@ -157,7 +158,7 @@ public class Main {
 
         public static void displayDeposits(){
             System.out.println("----₊ ⊹ Displaying Deposits Only ₊ ⊹----");
-            System.out.println("|Date      |Time         |Description                            |Vendor                    |Amount                    |  ");
+            System.out.println("|Date     |Time    |Description            |Vendor          |Amount          |  ");
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
 
@@ -173,9 +174,9 @@ public class Main {
 
         public static void displayPayments(){
             System.out.println("----₊ ⊹ Displaying Payments Only ₊ ⊹----");
+            System.out.println("|Date     |Time    |Description            |Vendor          |Amount          |  ");
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
-
             for (Transactions t : transactionsFromCSV) {
                 if (t.getAmount() < 0) {
                     System.out.println(t);
@@ -213,18 +214,17 @@ public class Main {
 
                 case "C":
                     System.out.println("----Displaying Year To Date----");
-                    displayYearToDate();
+                    //displayYearToDate();
                     break;
 
                 case "D":
                     System.out.println("----Displaying Previous Year----");
-                    displayPreviousYear();
+                    //displayPreviousYear();
                     break;
 
                 case "E":
                     System.out.println("You Have Selected: Search By Vendor");
                     System.out.println("Please Provide The Name:");
-                    showMainMenu();
                     return;
                 case "X":
                     System.out.println("GO BACK");
@@ -265,19 +265,19 @@ public class Main {
     }
     public static void displayPreviousMonth(){
         LocalDate dateStart = LocalDate.now();
+        LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);  //starting it from first day of last month
+        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this is where we isolate the last day of the month
 
-        LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);
-
-        for (Transactions t : transactionsFromCSV){
-            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(monthStart)){
+        for (Transactions t : transactionsFromCSV) {
+            if (t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isAfter(firstDayPrevMonth)) {
                 System.out.println(t);
             }
-            if(t.getDate().isAfter(monthStart) && t.getDate().isBefore(dateStart)){
+            if (t.getDate().isEqual(lastDayPrevMonth) || t.getDate().isBefore(lastDayPrevMonth)) {
                 System.out.println(t);
 
             }
 
-
+        }
 
     }
 
