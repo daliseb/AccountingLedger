@@ -52,7 +52,7 @@ public class Main {
                 break;
 
             case "X":
-                System.out.println("Exiting Program.....RETURNING TO MENU");
+                System.out.println("Exiting Program.....Come Back Soon! ♡ ");
                 return;
 
             default:
@@ -303,24 +303,23 @@ public class Main {
     }
 
 
-
     public static void displayPreviousYear(){
-//        LocalDate dateStart = LocalDate.now();
-//        LocalDate firstDayPrevYear = dateStart.minusMonths(1).withDayOfMonth(1);  //this helps me get the first day of the year
-//        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this helps my isolate the current date.
-//
-//
-//        for (Transactions t : transactionsFromCSV) {
-//
-//            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
-//                System.out.println(t);
-//            }
-//            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
-//                System.out.println(t);
-//
-//            }
-//
-//        }
+        LocalDate dateStart = LocalDate.now();
+        LocalDate firstDayPrevYear = dateStart.minusYears(1).withDayOfYear(1);  //this helps me get the first day of the PAST year
+        LocalDate lastDayPrevYear = dateStart.withDayOfYear(1).minusDays(1);    //this helps my isolate the last year with the end of it.
+
+
+        for (Transactions t : transactionsFromCSV) {
+
+            if(t.getDate().isEqual(firstDayPrevYear) || t.getDate().isEqual(lastDayPrevYear)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(firstDayPrevYear) && t.getDate().isBefore(lastDayPrevYear)){
+                System.out.println(t);
+
+            }
+
+        }
 
     }
 
