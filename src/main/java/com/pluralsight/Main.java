@@ -157,6 +157,7 @@ public class Main {
 
         public static void displayDeposits(){
             System.out.println("----₊ ⊹ Displaying Deposits Only ₊ ⊹----");
+            System.out.println("|Date      |Time         |Description                            |Vendor                    |Amount                    |  ");
             String dateTime = thisDateTime();
             System.out.println("Report Was Displayed On"+ " " + dateTime);
 
@@ -262,7 +263,23 @@ public class Main {
         }
 
     }
+    public static void displayPreviousMonth(){
+        LocalDate dateStart = LocalDate.now();
 
+        LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);
+
+        for (Transactions t : transactionsFromCSV){
+            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(monthStart)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(monthStart) && t.getDate().isBefore(dateStart)){
+                System.out.println(t);
+
+            }
+
+
+
+    }
 
 
             // Method to read transactions from the file pg 13 in 3a
