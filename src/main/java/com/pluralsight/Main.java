@@ -141,7 +141,7 @@ public class Main {
             }
         }
     }
-    //LEDGER MENU OPTIONS
+    //LEDGER MENU OPTIONS-----------------------------------------------------------------------------------------------
         public static void displayEntries(ArrayList<Transactions> transactionsFromCSV){  //go back and finish the method to pull my csv file
             System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
@@ -183,7 +183,7 @@ public class Main {
             }
 
         }
-
+//-----------------------------------------------------------------------------------------------------------------------
     public static void showReportsScreen() {
         while(true) {
             //THIS IS THE REPORTS SCREEN
@@ -205,35 +205,41 @@ public class Main {
                     displayMonthToDate();
                     break;
 
-                case "D":
-                    System.out.println("You Have Selected: Display All Deposits");
+                case "B":
+                    System.out.println("----Displaying Previous Month ----");
                     displayDeposits();
                     break;
 
-                case "P":
-                    System.out.println("You Have Selected: Display Payments");
+                case "C":
+                    System.out.println("----Displaying Year To Date----");
                     displayPayments();
                     break;
 
-                case "R":
+                case "D":
                     System.out.println("You Have Selected: Run Reports");
                     showReportsScreen();
                     break;
 
-                case "H":
+                case "E":
                     System.out.println("Exiting Program.....RETURNING TO HOME SCREEN");
+                    showMainMenu();
+                    return;
+                case "X":
+                    System.out.println("Exiting Program.....");
                     showMainMenu();
                     return;
 
                 default:
                     System.out.println("Invalid Entry! Please try again ˙◠˙");
-                    showMainMenu();
+                    //showReportsScreen();
                     break;
             }
 
 
         }
     }
+
+    //REPORTS SCREEN OPTIONS--------------------------------------------------------------------------------------------
     public static void displayMonthToDate(){
         LocalDate dateStart = LocalDate.now();
         LocalDate monthStart = dateStart.withDayOfMonth(1);
@@ -250,7 +256,7 @@ public class Main {
 
             }
 //fix switch case to match the reports menu, tailor if statements to match report screen requirements.
-
+//&& examples of operators, &&-means both statements have to be true.
 
         }
 
