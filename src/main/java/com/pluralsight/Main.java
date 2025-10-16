@@ -214,17 +214,18 @@ public class Main {
 
                 case "C":
                     System.out.println("----Displaying Year To Date----");
-                    //displayYearToDate();
+                    displayYearToDate();
                     break;
 
                 case "D":
                     System.out.println("----Displaying Previous Year----");
-                    //displayPreviousYear();
+                    displayPreviousYear();
                     break;
 
                 case "E":
                     System.out.println("You Have Selected: Search By Vendor");
                     System.out.println("Please Provide The Name:");
+                    
                     return;
                 case "X":
                     System.out.println("GO BACK");
@@ -269,7 +270,7 @@ public class Main {
         LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this is where we isolate the last day of the month
 
         for (Transactions t : transactionsFromCSV) {
-            if (t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isAfter(firstDayPrevMonth)) {
+            if (t.getDate().isEqual(firstDayPrevMonth) && t.getDate().isAfter(firstDayPrevMonth)) {
                 System.out.println(t);
             }
             if (t.getDate().isEqual(lastDayPrevMonth) || t.getDate().isBefore(lastDayPrevMonth)) {
@@ -280,6 +281,18 @@ public class Main {
         }
 
     }
+
+    public static void displayYearToDate(){
+        LocalDate dateStart = LocalDate.now();
+    }
+
+
+
+    public static void displayPreviousYear(){
+        LocalDate dateStart = LocalDate.now();
+
+    }
+
 
 
             // Method to read transactions from the file pg 13 in 3a
@@ -312,7 +325,7 @@ public class Main {
 
 
 
-    //method for adding/formatting time
+    //method for adding/formatting time---------------------------------------------------------------------------------
     public static String thisDateTime(){
         LocalDate thisDate = LocalDate.now();
         LocalTime thisTime = LocalTime.now();
@@ -326,9 +339,7 @@ public class Main {
     }
 
 
-
-
-    //file writer to add to csv found on pg.21 in 3a
+    //file writer to add to csv found on pg.21 in 3a--------------------------------------------------------------------
     public static void convertToCSV(String csvText) {
         try {
             FileWriter writer = new FileWriter("transactions.csv", true);
