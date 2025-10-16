@@ -223,7 +223,6 @@ public class Main {
 
                 case "E":
                     System.out.println("You Have Selected: Search By Vendor");
-                    System.out.println("Please Provide The Name:");
                     vendorSearch();
 
                     return;
@@ -324,6 +323,10 @@ public class Main {
     }
 
     public static void vendorSearch(){
+        String vendorSearch = ConsoleHelper.promptForString("Please Provide The Name Of The Vendor:");
+            if
+
+
 
 
     }
