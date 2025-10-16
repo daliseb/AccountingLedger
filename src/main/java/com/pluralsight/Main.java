@@ -225,7 +225,8 @@ public class Main {
                 case "E":
                     System.out.println("You Have Selected: Search By Vendor");
                     System.out.println("Please Provide The Name:");
-                    
+                    vendorSearch();
+
                     return;
                 case "X":
                     System.out.println("GO BACK");
@@ -290,6 +291,10 @@ public class Main {
 
     public static void displayPreviousYear(){
         LocalDate dateStart = LocalDate.now();
+
+    }
+
+    public static void vendorSearch(){
 
     }
 
