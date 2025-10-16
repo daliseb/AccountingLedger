@@ -287,10 +287,7 @@ public class Main {
 
     public static void displayYearToDate(){
         LocalDate dateStart = LocalDate.now();
-        LocalDate dateStart = LocalDate.now();
-        LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);  //starting it from first day of last month
-        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this is where we isolate the last day of the month
-
+        LocalDate firstDayOfYear = LocalDate.now().withDayOfYear(1);   //this helps me get the first day of the CURRENT year
 
         for (Transactions t : transactionsFromCSV) {
 
@@ -309,6 +306,22 @@ public class Main {
 
     public static void displayPreviousYear(){
         LocalDate dateStart = LocalDate.now();
+        LocalDate dateStart = LocalDate.now();
+        LocalDate firstDayPrevYear = dateStart.minusMonths(1).withDayOfMonth(1);  //this helps me get the first day of the year
+        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this helps my isolate the current date.
+
+
+        for (Transactions t : transactionsFromCSV) {
+
+            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
+                System.out.println(t);
+
+            }
+
+        }
 
     }
 
