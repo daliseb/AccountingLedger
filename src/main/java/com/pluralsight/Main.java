@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 
 //needed to import array list
@@ -360,7 +362,10 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+        //pg 46 in 3a, w3 schools
+        transactions.sort(Comparator.comparing(Transactions::getDate).reversed());
+        //Collections.sort(transactions, Comparator.comparing(Transactions::getDate).reversed());
+
 
         return transactions;
 
