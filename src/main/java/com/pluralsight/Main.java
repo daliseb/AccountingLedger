@@ -291,10 +291,10 @@ public class Main {
 
         for (Transactions t : transactionsFromCSV) {
 
-            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
+            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(firstDayOfYear)){
                 System.out.println(t);
             }
-            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
+            if(t.getDate().isAfter(firstDayOfYear) && t.getDate().isBefore(dateStart)){
                 System.out.println(t);
 
             }
@@ -305,23 +305,22 @@ public class Main {
 
 
     public static void displayPreviousYear(){
-        LocalDate dateStart = LocalDate.now();
-        LocalDate dateStart = LocalDate.now();
-        LocalDate firstDayPrevYear = dateStart.minusMonths(1).withDayOfMonth(1);  //this helps me get the first day of the year
-        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this helps my isolate the current date.
-
-
-        for (Transactions t : transactionsFromCSV) {
-
-            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
-                System.out.println(t);
-            }
-            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
-                System.out.println(t);
-
-            }
-
-        }
+//        LocalDate dateStart = LocalDate.now();
+//        LocalDate firstDayPrevYear = dateStart.minusMonths(1).withDayOfMonth(1);  //this helps me get the first day of the year
+//        LocalDate lastDayPrevMonth = dateStart.withDayOfMonth(1).minusDays(1);    //this helps my isolate the current date.
+//
+//
+//        for (Transactions t : transactionsFromCSV) {
+//
+//            if(t.getDate().isEqual(firstDayPrevMonth) || t.getDate().isEqual(lastDayPrevMonth)){
+//                System.out.println(t);
+//            }
+//            if(t.getDate().isAfter(firstDayPrevMonth) && t.getDate().isBefore(lastDayPrevMonth)){
+//                System.out.println(t);
+//
+//            }
+//
+//        }
 
     }
 
