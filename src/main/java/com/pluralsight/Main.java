@@ -249,7 +249,7 @@ public class Main {
                 System.out.println(t);
 
             }
-
+//fix switch case to match the reports menu, tailor if statements to match report screen requirements.
 
 
         }
