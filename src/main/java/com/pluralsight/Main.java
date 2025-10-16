@@ -323,17 +323,19 @@ public class Main {
     }
 
     public static void vendorSearch(){
-        String vendorSearch = ConsoleHelper.promptForString("Please Provide The Name Of The Vendor:");
-            if
+    String searchVendor = ConsoleHelper.promptForString("Please Provide The Name:");
+        for(Transactions t : transactionsFromCSV){
+            if (t.getVendor().toLowerCase().equals(searchVendor.toLowerCase())){
+                System.out.println(t);
+            }
 
-
-
-
+        }
     }
 
 
 
             // Method to read transactions from the file pg 13 in 3a
+    //this is where we sort, transactions from csv file is initialized here
     public static ArrayList<Transactions> getTransactions() {
         ArrayList<Transactions> transactions = new ArrayList<>();
 
@@ -358,7 +360,11 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
+
         return transactions;
+
+
     }
 
 
