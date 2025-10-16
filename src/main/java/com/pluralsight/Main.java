@@ -207,26 +207,27 @@ public class Main {
 
                 case "B":
                     System.out.println("----Displaying Previous Month ----");
-                    displayDeposits();
+                    displayPreviousMonth();
                     break;
 
                 case "C":
                     System.out.println("----Displaying Year To Date----");
-                    displayPayments();
+                    displayYearToDate();
                     break;
 
                 case "D":
-                    System.out.println("You Have Selected: Run Reports");
-                    showReportsScreen();
+                    System.out.println("----Displaying Previous Year----");
+                    displayPreviousYear();
                     break;
 
                 case "E":
-                    System.out.println("Exiting Program.....RETURNING TO HOME SCREEN");
+                    System.out.println("You Have Selected: Search By Vendor");
+                    System.out.println("Please Provide The Name:");
                     showMainMenu();
                     return;
                 case "X":
-                    System.out.println("Exiting Program.....");
-                    showMainMenu();
+                    System.out.println("GO BACK");
+                    showLedgerScreen();
                     return;
 
                 default:
