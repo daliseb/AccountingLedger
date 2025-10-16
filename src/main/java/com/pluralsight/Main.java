@@ -199,12 +199,62 @@ public class Main {
             String choice = ConsoleHelper.promptForString("Enter Your Choice");
             choice = choice.toUpperCase();  //ensures answer will be in uppercase
 
+            switch (choice) {
+                case "A":
+                    System.out.println("----Displaying Month To Date----");
+                    displayMonthToDate();
+                    break;
+
+                case "D":
+                    System.out.println("You Have Selected: Display All Deposits");
+                    displayDeposits();
+                    break;
+
+                case "P":
+                    System.out.println("You Have Selected: Display Payments");
+                    displayPayments();
+                    break;
+
+                case "R":
+                    System.out.println("You Have Selected: Run Reports");
+                    showReportsScreen();
+                    break;
+
+                case "H":
+                    System.out.println("Exiting Program.....RETURNING TO HOME SCREEN");
+                    showMainMenu();
+                    return;
+
+                default:
+                    System.out.println("Invalid Entry! Please try again ˙◠˙");
+                    showMainMenu();
+                    break;
+            }
+
 
         }
     }
+    public static void displayMonthToDate(){
+        LocalDate dateStart = LocalDate.now();
+        LocalDate monthStart = dateStart.withDayOfMonth(1);
+
+        //System.out.println(dateStart);
+        //System.out.println(monthStart);
+
+        for (Transactions t : transactionsFromCSV){
+            if(t.getDate().isEqual(dateStart) || t.getDate().isEqual(monthStart)){
+                System.out.println(t);
+            }
+            if(t.getDate().isAfter(monthStart) && t.getDate().isBefore(dateStart)){
+                System.out.println(t);
+
+            }
 
 
 
+        }
+
+    }
 
 
 
@@ -233,7 +283,6 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return transactions;
     }
 
@@ -271,8 +320,6 @@ public class Main {
 
 
     }
-
-
 
 
 //        //System.out.println(transactions.get(i).getTransactions);     //load files from csv
