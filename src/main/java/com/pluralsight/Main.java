@@ -1,28 +1,23 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import java.io.*;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
+import java.util.*;
 
 //needed to import array list
 
-
 public class Main {
     public static ArrayList<Transactions> transactionsFromCSV = getTransactions();
+
     public static void main(String[] args) {
        //Ledger ledger = new Ledger();
 
         showMainMenu();
         //Home Screen
     }
+
+    //HOME MENU OPTIONS
     public static void showMainMenu(){
 
         //THIS IS THE HOME SCREEN
@@ -64,7 +59,7 @@ public class Main {
         }
 
     }
-    //HOME MENU OPTIONS
+
     public static void addDeposit() {
         System.out.println("----₊ ⊹ Add Deposit ₊ ⊹----");
         String description = ConsoleHelper.promptForString("Enter description: ");
@@ -142,8 +137,9 @@ public class Main {
             }
         }
     }
+
     //LEDGER MENU OPTIONS-----------------------------------------------------------------------------------------------
-        public static void displayEntries(ArrayList<Transactions> transactionsFromCSV){  //go back and finish the method to pull my csv file
+        public static void displayEntries(ArrayList<Transactions> transactionsFromCSV){
             System.out.println("----₊ ⊹ Displaying Entries ₊ ⊹---");
             String dateTime = thisDateTime();
             System.out.println("|Date     |Time    |Description            |Vendor          |Amount          |  ");
@@ -266,6 +262,7 @@ public class Main {
         }
 
     }
+
     public static void displayPreviousMonth(){
         LocalDate dateStart = LocalDate.now();
         LocalDate firstDayPrevMonth = dateStart.minusMonths(1).withDayOfMonth(1);  //starting it from first day of last month
@@ -302,8 +299,7 @@ public class Main {
 
         }
     }
-
-
+    
     public static void displayPreviousYear(){
         LocalDate dateStart = LocalDate.now();
         LocalDate firstDayPrevYear = dateStart.minusYears(1).withDayOfYear(1);  //this helps me get the first day of the PAST year
@@ -333,7 +329,6 @@ public class Main {
 
         }
     }
-
 
 
             // Method to read transactions from the file pg 13 in 3a

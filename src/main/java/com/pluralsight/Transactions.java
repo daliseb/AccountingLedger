@@ -13,7 +13,7 @@ public class Transactions {
     private Double amount;
 
 
-//constructors:
+    //constructors:
     public Transactions(LocalDate date, LocalTime time, String description, String vendor, Double amount) {
         this.date = date;
         this.time = time;
@@ -23,7 +23,7 @@ public class Transactions {
     }
 
 
-//getters and setters:
+    //getters and setters:
     public LocalDate getDate() {
         return date;
     }
@@ -64,9 +64,14 @@ public class Transactions {
         this.amount = amount;
     }
 
-    public String toString(LocalDate date, LocalTime time, String description, String vendor, Double amount) {
-        return String.format("%s|%s|%s|%s|%.2f", date,time,description,vendor,amount);
+    @Override
+    public String toString() {
+        return String.format("%s|%s|%s|%s|%.2f", date, time, description, vendor, amount);
     }
 
 }
+
+    //    public String toCSVText(String dateTime, String description, String vendor, Double amount) {
+//        return String.format("%s|%s|%s|%.2f\n", dateTime,description,vendor,amount);
+//    }
 
