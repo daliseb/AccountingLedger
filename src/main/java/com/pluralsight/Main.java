@@ -73,8 +73,8 @@ public class Main {
         String dateTime = thisDateTime();
         //needed to add prompt for double in console helper^
 
-        System.out.println("Deposit added: " + description + " | Amount: $" + amount + "\n");
-        String depositText = dateTime + "|" + description + "|" + vendor + "|" + amount + "\n";
+        System.out.printf("Deposit Added: %s | Amount: $%.2f%n", description,amount);
+        String depositText = toCSVText(dateTime, description, vendor, amount);
         convertToCSV(depositText);
         showMainMenu();
     }
@@ -86,8 +86,8 @@ public class Main {
         String vendor = ConsoleHelper.promptForString("Enter Vendor Name:");
         String dateTime = thisDateTime();
 
-        System.out.println("Payment added: " + description + " | Amount: $" + amount);
-        String depositText = dateTime + "|" + description + "|" + vendor + "|" + amount + "\n";
+        System.out.printf("Payment Added: %s | Amount: $%.2f%n", description,amount);
+        String depositText = toCSVText(dateTime, description, vendor, amount);
         convertToCSV(depositText);
         showMainMenu();
 
@@ -403,6 +403,11 @@ public class Main {
         }
 
 
+    }
+
+
+    public static String toCSVText(String dateTime, String description, String vendor, Double amount) {
+        return String.format("%s|%s|%s|%.2f\n", dateTime,description,vendor,amount);
     }
 
 
