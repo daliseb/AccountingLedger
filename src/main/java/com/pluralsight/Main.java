@@ -82,7 +82,7 @@ public class Main {
         String dateTime = thisDateTime();
 
         System.out.printf("Payment Added: %s | Amount: $%.2f%n", description,amount);
-        String depositText = toCSVText(dateTime, description, vendor, amount);
+        String depositText = toCSVText(dateTime, description, vendor, -amount);
         convertToCSV(depositText);
         showMainMenu();
 
@@ -331,7 +331,7 @@ public class Main {
     }
 
 
-            // Method to read transactions from the file pg 13 in 3a
+            // Method to READ transactions from the file pg 13 in 3a
     //this is where we sort, transactions from csv file is initialized here
     public static ArrayList<Transactions> getTransactions() {
         ArrayList<Transactions> transactions = new ArrayList<>();
@@ -366,8 +366,6 @@ public class Main {
 
 
     }
-
-
 
     //method for adding/formatting time---------------------------------------------------------------------------------
     public static String thisDateTime(){
