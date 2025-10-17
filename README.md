@@ -3,5 +3,5 @@ The objective of this project, was to create an accounting application that help
 
 -it is important to identify the first step, "What do we need our application to do exactly?"
 This, sets us up with a game plan, we can then start thinking on the steps that we need to achieve our requirements! 
-[IMG_0455.HEIC.zip](https://github.com/user-attachments/files/22963361/IMG_0455.HEIC.zip)
-<img width="2226" height="1430" alt="setting up my workbooks" src="https://github.com/user-attachments/assets/04c4c357-c144-49a5-8cb2-49f8f5486426" />
+
+<img width="300" height="300" alt="setting up my workbooks" src="https://github.com/user-attachments/assets/04c4c357-c144-49a5-8cb2-49f8f5486426" />
