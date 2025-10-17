@@ -35,15 +35,16 @@ This, sets us up with a game plan, we can then start thinking on the steps that 
 
 <img width="450" height="450" alt="creating method to read csv" src="https://github.com/user-attachments/assets/64d44840-4865-4b2d-835a-4eea1281fefa" />
 
-***** As you can see above, I had to create a brand new method to be able to pull the text from my csv AND add onto it. For example, when the options such as add deposit or add payment are selected, the user input can then go back into the csv file. 
+*****As you can see above, I had to create a brand new method to be able to pull the text from my csv AND add onto it. For example, when the options such as add deposit or add payment are selected, the user input can then go back into the csv file. 
 
 
 <img width="450" height="450" alt="creating my previous month display" src="https://github.com/user-attachments/assets/4037a56e-1dd3-46d3-827f-2624e4beb3ea" />
 
+****A requirement for our capstone was to create a reports menu, within the ledger menu, that was able to filter out dates, such as month to date, previous month, year to date and previous year! I did some research on W3 schools, I used the java oracle website and a website called geeks for geeks that explained "Is After", "Is Before" and "Is Equal To" methods. This made it easier to understand and broke things down for me.
 
 <img width="450" height="450" alt="trouble shooting" src="https://github.com/user-attachments/assets/e1b28386-3a1c-4eee-8a1b-2496f6e20a55" />
 
-
+****Although this method was easier to understand, I still ran into trouble along the way, Here I am trouble shooting the issue and seeing if my prompts are pulling my files from csv correctly. As sho
 
 
 <img width="450" height="450" alt="more troubleshooting" src="https://github.com/user-attachments/assets/6c6a22ab-6499-49f8-a9e2-6485766d668a" />
