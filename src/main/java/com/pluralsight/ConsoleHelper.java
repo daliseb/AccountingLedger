@@ -9,13 +9,16 @@ public class ConsoleHelper {
     }
 
     public static double promptForDouble(String prompt) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println(prompt);
         while (!scanner.hasNextDouble()) {
             System.out.println("Invalid input");
             scanner.next(); // discard invalid input
             System.out.println(prompt);
         }
-        return scanner.nextDouble();
+        double value = scanner.nextDouble();
+        scanner.nextLine();
+        return value;
     }
 
 }
