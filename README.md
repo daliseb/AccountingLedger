@@ -44,55 +44,41 @@ This, sets us up with a game plan, we can then start thinking on the steps that 
 
 <img width="450" height="450" alt="trouble shooting" src="https://github.com/user-attachments/assets/e1b28386-3a1c-4eee-8a1b-2496f6e20a55" />
 
-****Although this method was easier to understand, I still ran into trouble along the way, Here I am trouble shooting the issue and seeing if my prompts are pulling my files from csv correctly. As sho
+****Although this method was easier to understand, I still ran into trouble along the way, Here I am trouble shooting the issue and seeing if my prompts are pulling my files from csv correctly. As shown above, I was able to write system.out.println(dateStart) and system.out.println("monthStart") to be able to isolate these dates to make sure it was pulling the correct ones. 
 
 
 <img width="450" height="450" alt="more troubleshooting" src="https://github.com/user-attachments/assets/6c6a22ab-6499-49f8-a9e2-6485766d668a" />
 
-
-
-
+****Another example of my toruble shooting^^^^
 
 
 
 <img width="450" height="450" alt="monthto date finally worked" src="https://github.com/user-attachments/assets/ae93622b-8267-4458-9af0-5b3e7ff9303b" />
 
-
-
-
-
+****I finally got it to work here! ◝(ᵔᗜᵔ)◜
 
 
 <img width="450" height="450" alt="There is patterns in my code" src="https://github.com/user-attachments/assets/544da018-a782-40b0-9d45-4cad03793ce1" />
 
-
-
-
-
-
+****This was relevent to most of my methods but was shown very well here, the structure wwas the same, for example, the same method I used for my month to date, I was able to apply it to my previous month, year to date and previous year! This made things so much easier and faster as I kept going.
 
 
 <img width="450" height="450" alt="setting a reminder comment" src="https://github.com/user-attachments/assets/41edcadd-b531-436a-952f-198784c702aa" />
 
-
-
-
-
-
-
-
+****At the end of the day, It is important to add reminders of what needs to be done, this helped me greatly as I was able to remember what I was working on at the next day. 
 
 <img width="450" height="450" alt="realizing that there was getters and setters that werent needed" src="https://github.com/user-attachments/assets/f268d5b1-c045-4115-a85a-615b81382329" />
 
+****After I began to polish and take out everything that was not used, with this project I was able to see how not all getters and setters were used, I went ahead and deleted them to clean up my screen. 
+
 <img width="450" height="450" alt="all 3 completed screens " src="https://github.com/user-attachments/assets/0d1e5a22-8fb2-4610-8468-c842f76254fc" />
 
-
-
-
-
-
+****I am very proud of my screens!! Here is an example on how I was able to call back the previous screen. This also took some tweaking, mainly using my return function or simply calling it back in the switch case.
 
 <img width="450" height="450" alt="my peers helping me condense for a better view" src="https://github.com/user-attachments/assets/41ebe930-c75b-4e8f-a842-dbfe589b276b" />
+
+
+***My final steps to get ready for presentation day!!!! At the last day, I gathered with my classmates to present and rehearse our presentations, I was suggested to condense everything, to make it easier to read and present, an amazing suggestion! (thank you Muhammed M!) 
 
 
 
