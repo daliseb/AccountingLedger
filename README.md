@@ -60,7 +60,7 @@ This, sets us up with a game plan, we can then start thinking on the steps that 
 
 <img width="450" height="450" alt="There is patterns in my code" src="https://github.com/user-attachments/assets/544da018-a782-40b0-9d45-4cad03793ce1" />
 
-****This was relevent to most of my methods but was shown very well here, the structure wwas the same, for example, the same method I used for my month to date, I was able to apply it to my previous month, year to date and previous year! This made things so much easier and faster as I kept going.
+****This was relevent to most of my methods but was shown very well here, the structure was the same, for example, the same method I used for my month to date, I was able to apply it to my previous month, year to date and previous year! This made things so much easier and faster as I kept going.
 
 
 <img width="450" height="450" alt="setting a reminder comment" src="https://github.com/user-attachments/assets/41edcadd-b531-436a-952f-198784c702aa" />
