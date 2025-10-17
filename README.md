@@ -38,4 +38,62 @@ This, sets us up with a game plan, we can then start thinking on the steps that 
 ***** As you can see above, I had to create a brand new method to be able to pull the text from my csv AND add onto it. For example, when the options such as add deposit or add payment are selected, the user input can then go back into the csv file. 
 
 
+<img width="450" height="450" alt="creating my previous month display" src="https://github.com/user-attachments/assets/4037a56e-1dd3-46d3-827f-2624e4beb3ea" />
+
+
+<img width="450" height="450" alt="trouble shooting" src="https://github.com/user-attachments/assets/e1b28386-3a1c-4eee-8a1b-2496f6e20a55" />
+
+
+
+
+<img width="450" height="450" alt="more troubleshooting" src="https://github.com/user-attachments/assets/6c6a22ab-6499-49f8-a9e2-6485766d668a" />
+
+
+
+
+
+
+
+<img width="450" height="450" alt="monthto date finally worked" src="https://github.com/user-attachments/assets/ae93622b-8267-4458-9af0-5b3e7ff9303b" />
+
+
+
+
+
+
+
+<img width="450" height="450" alt="There is patterns in my code" src="https://github.com/user-attachments/assets/544da018-a782-40b0-9d45-4cad03793ce1" />
+
+
+
+
+
+
+
+
+<img width="450" height="450" alt="setting a reminder comment" src="https://github.com/user-attachments/assets/41edcadd-b531-436a-952f-198784c702aa" />
+
+
+
+
+
+
+
+
+
+<img width="450" height="450" alt="realizing that there was getters and setters that werent needed" src="https://github.com/user-attachments/assets/f268d5b1-c045-4115-a85a-615b81382329" />
+
+<img width="450" height="450" alt="all 3 completed screens " src="https://github.com/user-attachments/assets/0d1e5a22-8fb2-4610-8468-c842f76254fc" />
+
+
+
+
+
+
+
+<img width="450" height="450" alt="my peers helping me condense for a better view" src="https://github.com/user-attachments/assets/41ebe930-c75b-4e8f-a842-dbfe589b276b" />
+
+
+
+
 
