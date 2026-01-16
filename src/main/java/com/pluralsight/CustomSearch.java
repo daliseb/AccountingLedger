@@ -1,10 +1,12 @@
 package com.pluralsight;
 
-import com.pluralsight.ConsoleHelper;
+import java.util.ArrayList;
 
 public class CustomSearch {
 
-    public static void main(String[] args) {
+    public static ArrayList<Transactions> transactionsFromCSV = Main.transactionsFromCSV;
+
+    public static void menu() {
 
         String mainMenu = """
                 What do you want to do?
@@ -24,7 +26,7 @@ public class CustomSearch {
 
             switch (command) {
                 case 1:
-                    vendorSearch();
+                    vendorSearch(transactionsFromCSV);
                     break;
                 case 2:
                     descriptionSearch();
@@ -44,11 +46,16 @@ public class CustomSearch {
         }
     }
 
-    public static void vendorSearch() {}
+    public static void vendorSearch(ArrayList<Transactions> transactionsFromCSV) {
+        String searchVendor = ConsoleHelper.promptForString("Please Provide The Name:");
+        for (Transactions t : transactionsFromCSV) {
+            if (t.getVendor().equalsIgnoreCase(searchVendor)) {
+                System.out.println(t);
+            }
+        }
+    }
 
     public static void descriptionSearch() {}
-
     public static void amountSearch() {}
-
     public static void dateSearch() {}
 }
