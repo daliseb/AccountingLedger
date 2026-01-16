@@ -6,29 +6,36 @@ import java.util.ArrayList;
 
 public class CustomSearch {
 
+    // ===== ANSI COLORS =====
+    public static final String RESET = "\u001B[0m";
+    public static final String PINK = "\u001B[95m";
+    public static final String YELLOW = "\u001B[93m";
+    public static final String ORANGE = "\u001B[38;5;208m";
+
     public static ArrayList<Transactions> transactionsFromCSV = Main.transactionsFromCSV;
 
     public static void menu() {
 
-        String mainMenu = """
+        String mainMenu = PINK + """
                 What do you want to do?
+                 """ + YELLOW + """
                  1- Search By Vendor
                  2- Search By Description
                  3- Search By Amount
                  4- Search By Date
                  5- Quit the application
-                """;
+                """ + RESET;
 
         boolean menu = true;
 
         while (menu) {
 
             System.out.print(mainMenu);
-            int command = ConsoleHelper.promptForInt("Enter your command");
+            int command = ConsoleHelper.promptForInt(ORANGE + "Enter your command" + RESET);
 
             switch (command) {
                 case 1:
-                    vendorSearch(transactionsFromCSV);
+                    vendorSearch();
                     break;
                 case 2:
                     descriptionSearch();
@@ -42,14 +49,14 @@ public class CustomSearch {
                 case 5:
                     return;
                 default:
-                    System.out.println("INVALID COMMAND!! Please select a valid option.");
+                    System.out.println(PINK + "INVALID COMMAND!! Please select a valid option." + RESET);
                     break;
             }
         }
     }
 
-    public static void vendorSearch(ArrayList<Transactions> transactionsFromCSV) {
-        String searchVendor = ConsoleHelper.promptForString("Please Provide The Name:");
+    public static void vendorSearch() {
+        String searchVendor = ConsoleHelper.promptForString(YELLOW + "Please Provide The Name:" + RESET);
         for (Transactions t : transactionsFromCSV) {
             if (t.getVendor().equalsIgnoreCase(searchVendor)) {
                 System.out.println(t);
@@ -58,7 +65,7 @@ public class CustomSearch {
     }
 
     public static void descriptionSearch() {
-        String searchDescription = ConsoleHelper.promptForString("Please Provide The Description:");
+        String searchDescription = ConsoleHelper.promptForString(YELLOW + "Please Provide The Description:" + RESET);
         for (Transactions t : transactionsFromCSV) {
             if (t.getDescription().toLowerCase().equals(searchDescription.toLowerCase())) {
                 System.out.println(t);
@@ -67,7 +74,7 @@ public class CustomSearch {
     }
 
     public static void amountSearch() {
-        String searchAmount = ConsoleHelper.promptForString("Please Provide The Description:");
+        String searchAmount = ConsoleHelper.promptForString(YELLOW + "Please Provide The Description:" + RESET);
         for (Transactions t : transactionsFromCSV) {
             if (t.getDescription().toLowerCase().equals(searchAmount.toLowerCase())) {
                 System.out.println(t);
@@ -77,7 +84,7 @@ public class CustomSearch {
 
     public static void dateSearch() {
         String input = ConsoleHelper.promptForString(
-                "Enter date (YYYY-MM-DD): "
+                ORANGE + "Enter date (YYYY-MM-DD): " + RESET
         ).trim();
 
         LocalDate searchDate;
@@ -85,7 +92,7 @@ public class CustomSearch {
         try {
             searchDate = LocalDate.parse(input);
         } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format. Use YYYY-MM-DD.");
+            System.out.println(PINK + "Invalid date format. Use YYYY-MM-DD." + RESET);
             return;
         }
 
@@ -99,7 +106,7 @@ public class CustomSearch {
         }
 
         if (!found) {
-            System.out.println("No transactions found for that date.");
+            System.out.println(YELLOW + "No transactions found for that date." + RESET);
         }
     }
 
