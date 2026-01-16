@@ -244,8 +244,8 @@ public class Main {
         LocalDate dateStart = LocalDate.now();
         LocalDate monthStart = dateStart.withDayOfMonth(1);
 
-        //System.out.println(dateStart);
-        //System.out.println(monthStart);
+//        System.out.println(dateStart);
+//        System.out.println(monthStart);
 
         for (Transactions t : transactionsFromCSV){
 
@@ -402,16 +402,6 @@ public class Main {
     public static String toCSVText(String dateTime, String description, String vendor, Double amount) {
         return String.format("%s|%s|%s|%.2f\n", dateTime,description,vendor,amount);
     }
-
-
-//        //System.out.println(transactions.get(i).getTransactions);     //load files from csv
-//
-//        //for (int i = 0; i < transactions.size(); i++) {
-//            //Transactions t = transactions.get(i);
-//            System.out.println(t.getTransactions());
-//
-//            System.out.println(t);
-//        }
 }
 
 
