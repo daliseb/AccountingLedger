@@ -47,6 +47,9 @@ public class Main {
                 System.out.println("You Have Selected: View Ledger");
                 showLedgerScreen();
                 break;
+            case"S":
+                System.out.println(ORANGE + "You Have Selected: Custom Search" + RESET);
+                CustomSearch.menu();
 
             case "X":
                 System.out.println("Exiting Program.....Come Back Soon! ♡ ");
