@@ -26,8 +26,11 @@ public class Main {
 
         //THIS IS THE HOME SCREEN
         System.out.println(PINK +
-                "----✿✿✿ Welcome to Dalis' Smoothie Shop Ledger! ✿✿✿----"
+                "🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊\n" +
+                "   ✿ Welcome to Dalis' Smoothie Shop Ledger ✿\n" +
+                "🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊"
                 + RESET);
+
 
         System.out.println(ORANGE + "Please select one of the following options:" + RESET);
         System.out.println(YELLOW + "D. Add Deposit" + RESET);
