@@ -55,7 +55,22 @@ public class CustomSearch {
         }
     }
 
-    public static void descriptionSearch() {}
-    public static void amountSearch() {}
+    public static void descriptionSearch() {
+        String searchDescription = ConsoleHelper.promptForString("Please Provide The Description:");
+        for(Transactions t : transactionsFromCSV){
+            if (t.getDescription().toLowerCase().equals(searchDescription.toLowerCase())){
+                System.out.println(t);
+            }
+        }
+    }
+
+    public static void amountSearch() {
+        String searchAmount = ConsoleHelper.promptForString("Please Provide The Description:");
+        for(Transactions t : transactionsFromCSV) {
+            if (t.getDescription().toLowerCase().equals(searchAmount.toLowerCase())) {
+                System.out.println(t);
+            }
+        }
+    }
     public static void dateSearch() {}
 }
