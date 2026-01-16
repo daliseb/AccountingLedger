@@ -20,6 +20,18 @@ public class ConsoleHelper {
         scanner.nextLine();
         return value;
     }
+    public static int promptForInt(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(prompt);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Invalid input");
+            scanner.next(); // discard invalid input
+            System.out.println(prompt);
+        }
+        int value = scanner.nextInt();
+        scanner.nextLine();
+        return value;
+    }
 
 }
 
