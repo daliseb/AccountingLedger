@@ -39,6 +39,7 @@ public class Main {
         System.out.println(YELLOW + "D. Add Deposit" + RESET);
         System.out.println(YELLOW + "P. Make A Payment" + RESET);
         System.out.println(YELLOW + "L. View Ledger" + RESET);
+        System.out.println(YELLOW + "S. Custom Search" + RESET);
         System.out.println(YELLOW + "X. Exit" + RESET);
 
         String choice = ConsoleHelper.promptForString(
