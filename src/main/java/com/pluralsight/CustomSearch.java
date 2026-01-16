@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
 public class CustomSearch {
@@ -57,8 +59,8 @@ public class CustomSearch {
 
     public static void descriptionSearch() {
         String searchDescription = ConsoleHelper.promptForString("Please Provide The Description:");
-        for(Transactions t : transactionsFromCSV){
-            if (t.getDescription().toLowerCase().equals(searchDescription.toLowerCase())){
+        for (Transactions t : transactionsFromCSV) {
+            if (t.getDescription().toLowerCase().equals(searchDescription.toLowerCase())) {
                 System.out.println(t);
             }
         }
@@ -66,11 +68,39 @@ public class CustomSearch {
 
     public static void amountSearch() {
         String searchAmount = ConsoleHelper.promptForString("Please Provide The Description:");
-        for(Transactions t : transactionsFromCSV) {
+        for (Transactions t : transactionsFromCSV) {
             if (t.getDescription().toLowerCase().equals(searchAmount.toLowerCase())) {
                 System.out.println(t);
             }
         }
     }
-    public static void dateSearch() {}
+
+    public static void dateSearch() {
+        String input = ConsoleHelper.promptForString(
+                "Enter date (YYYY-MM-DD): "
+        ).trim();
+
+        LocalDate searchDate;
+
+        try {
+            searchDate = LocalDate.parse(input);
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date format. Use YYYY-MM-DD.");
+            return;
+        }
+
+        boolean found = false;
+
+        for (Transactions t : transactionsFromCSV) {
+            if (t.getDate().equals(searchDate)) {
+                System.out.println(t);
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No transactions found for that date.");
+        }
+    }
+
 }
