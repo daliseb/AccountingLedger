@@ -29,9 +29,9 @@ public class Main {
 
         //THIS IS THE HOME SCREEN
         System.out.println(PINK +
-                "🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊\n" +
-                "   ✿ Welcome to Dalis' Smoothie Shop Ledger ✿\n" +
-                "🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊"
+                "   🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊\n" +
+                "✿ Welcome to Dalis' Smoothie Shop Ledger ✿\n" +
+                "   🍓🥭🍍🍌🍉🍊🍓🍍🍌🍉🍊🍓🍍🍌🍉🍊"
                 + RESET);
 
 
